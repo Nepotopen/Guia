@@ -12,3 +12,24 @@ body{
 hr{
     border: 1px solid rgba(61, 226, 61, 0.925);
 }
+
+.grupoComandos {
+    display:flex;
+    justify-content: space-between;,
+    margin-inline: 20px; 
+    
+}
+
+.cartaoComandos {
+ 
+    width: calc(25% - 15px);
+    border: 1px solid #00ff00;
+    border-radius: 10px;
+    padding: 5px 5px;
+    transition: 150ms;
+}
+.cartaoComandos:hover{
+    background-color: #022c02;
+    scale: 105%;
+    transform: translateY(-5%);
+}
