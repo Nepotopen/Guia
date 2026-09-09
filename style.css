@@ -2,3 +2,13 @@
     margin: 0px;
     padding: 0px;
 }
+
+body{
+    font-family: monospace;
+    background-color: black;
+    color: rgba(61, 226, 61, 0.925);
+}
+
+hr{
+    border: 1px solid rgba(61, 226, 61, 0.925);
+}
