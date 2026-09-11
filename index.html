@@ -5,6 +5,8 @@
 </head>
 
 <body>
+
+
     <header>
         <h1>Guia de Bolso</h1>
     </header>
@@ -23,20 +25,50 @@
     
     <div class="cartaoComandos">
         <H3>git add .</H3>
+        <br>
         <p>Ele atualiza os arquivos de dentro da pasta </p>
     </div>
 
     <div class="cartaoComandos">
+        
     <h3>git commit -m "[Mensagem de Commit]"</h3>
+    <br>
     <p> Ele atualiza o repositório e deixa uma mensagem, geralmente de como estão as atualizações do projeto</p>
     </div>
 
     <div class="cartaoComandos">
 
     <h3> git push -u origin main</h3>
+    <br>
     <p>Ele "empurra" as atualizações para o seu repositório, geralmente a origin é o github, mas isso foi previamente configurado  </p>
     </div>
 
+    <div class="cartaoComandos">
+    <h3>git fetch "[Mensagem de Commit]"</h3>
+    <br>
+    <p> Verifica se o repositório remoto tem midificações em relação ao local</p>
+    </div>
+
+    <div class="cartaoComandos">
+    <h3>git Pull  "[Mensagem de Commit]"</h3>
+    <br>
+    <p> Ele puxa as atualizações que estavam remotas para o repositório local</p>
+    </div>
+
+    <div class="cartaoComandos">
+    <h3>git clone [link do repositório]</h3>
+    <br>
+    <p> Ele trás todas as informações que está no repositório salvo online</p>
+    </div>
+
+    <div class="cartaoComandos">    
+    <h3>git remote add origin[link do repositório]"</h3>
+    <br>
+    <p>Conecta o repositório local ao repositório remoto </p>
+    </div>
+    
+
+    
  </section>
 
     </main>
@@ -45,5 +77,61 @@
         <hr>
         <p> Dica: Importante digitar os comando corretamente respeitando os espaços entre as palavas e pontuações</p>
     </foooter>
+
+   
+
+    <canvas id="matrix"></canvas>
+
+    <script>
+        const canvas = document.getElementById('matrix');
+        const ctx = canvas.getContext('2d');
+
+        // Ocupar a tela inteira
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // Caracteres em japonês (katakana) e números usados no efeito
+        const letters = '日ﾊﾐﾋｰｳｼﾅﾓﾆｻﾜﾂｵﾘｱﾎﾃﾏｹﾒｴｶｷﾑﾕﾗｾﾈｽﾀﾇﾍ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const fontSize = 16;
+        const columns = canvas.width / fontSize;
+
+        // Posição y de cada pingo de chuva
+        const drops = [];
+        for (let x = 0; x < columns; x++) {
+            drops[x] = 1;
+        }
+
+        function draw() {
+            // Fundo preto com transparência para criar o rastro
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#0F0'; // Cor verde Matrix
+            ctx.font = fontSize + 'px monospace';
+            ctx.fillStyle = 'rgba(0, 255, 0, 0.3)';
+            for (let i = 0; i < drops.length; i++) {
+                const text = letters.charAt(Math.floor(Math.random() * letters.length));
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+
+        setInterval(draw, 33);
+
+        // Ajustar redimensionamento da janela
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+
+
+
+
+    
 </body>
 </html>

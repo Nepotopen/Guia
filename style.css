@@ -15,21 +15,64 @@ hr{
 
 .grupoComandos {
     display:flex;
-    justify-content: space-between;,
-    margin-inline: 20px; 
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-inline: 15px; 
+    gap: 10px;
     
 }
 
 .cartaoComandos {
  
-    width: calc(25% - 15px);
+    width: calc(25% - 20px);
     border: 1px solid #00ff00;
     border-radius: 10px;
     padding: 5px 5px;
     transition: 150ms;
+    background-color: rgba(172, 255, 47, 0.233) ;
+    height: 95px;
+    display:flex;
+    flex-direction: column;
 }
 .cartaoComandos:hover{
-    background-color: #022c02;
+    background-color: #330325;
     scale: 105%;
     transform: translateY(-5%);
+}
+
+.cartaoComandos p {
+    height:80%;
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+    margin-block: auto;
+}
+
+.cartaoComandos h3 {
+    text-align: center;
+}
+
+main {
+    height: 80%;
+    height: 85vh;
+    display:flex ;
+    flex-direction: column;
+    margin-block: auto;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+canvas {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;}
+
+header{
+    text-align: center;
+    font-family: ;
 }
