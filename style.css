@@ -76,3 +76,10 @@ header{
     text-align: center;
     font-family: ;
 }
+
+@media screen and (min-width: 768px){
+    .grupoComandos {
+        flex-direction: row;}
+
+}
+    
