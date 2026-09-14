@@ -3,6 +3,7 @@
     padding: 0px;
 }
 
+
 body{
     font-family: monospace;
     background-color: black;
@@ -15,26 +16,19 @@ hr{
 
 .grupoComandos {
     display:flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-inline: 15px; 
-    gap: 10px;
-    
+    flex-direction: column;
+    gap: 15px;
 }
 
 .cartaoComandos {
  
-    width: calc(25% - 20px);
-    border: 1px solid #00ff00;
-    border-radius: 10px;
-    padding: 5px 5px;
-    transition: 150ms;
-    background-color: rgba(172, 255, 47, 0.233) ;
-    height: 95px;
-    display:flex;
-    flex-direction: column;
+ border: 1px solid #00ff00;
+ border-radius: 40px;
+ width: 75vw;
+ height: 20vw;
 }
+
+
 .cartaoComandos:hover{
     background-color: #330325;
     scale: 105%;
@@ -42,7 +36,7 @@ hr{
 }
 
 .cartaoComandos p {
-    height:80%;
+    height:10%;
     align-self: center;
     justify-self: center;
     text-align: center;
@@ -54,8 +48,6 @@ hr{
 }
 
 main {
-    height: 80%;
-    height: 85vh;
     display:flex ;
     flex-direction: column;
     margin-block: auto;
@@ -74,12 +66,17 @@ canvas {
 
 header{
     text-align: center;
-    font-family: ;
 }
 
-@media screen and (min-width: 768px){
-    .grupoComandos {
-        flex-direction: row;}
+@media only screen and (min:600px){
+
+    font-size:row;
+    flex-wrap: -ms-wrap-flow;
 
 }
-    
+
+.cartaoComandos{
+
+    width: calc(500vw-30px);
+}
+@media onlu screen and (min-width)
